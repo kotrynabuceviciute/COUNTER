@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Word counter</string>
+    <string name="button_count">Count</string>
+    <string name="input_hint">Enter text</string>
+    <string name="empty_input_message">Please enter text</string>
+    <string-array name="Count_types">
+        <item>words</item>
+        <item>chars</item>
+        <item>sentense</item>
+        <item>number</item>
+    </string-array>
+</resources>
