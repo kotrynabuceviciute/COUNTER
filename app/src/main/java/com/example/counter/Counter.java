@@ -7,11 +7,17 @@ public class Counter {
     }
 
     public static int getWordCount(String input) {
-        return input.trim().split("\\s+").length; // nuimami tarpai pradzioje ir pabaigoje ir pjausto teksta ten kur yyra tarpai
+        int wordCount = 0;
+        for (String word : input.trim().split("\\s+")) {
+            if (!word.isEmpty() && !Character.isDigit(word.charAt(0))) {
+                wordCount++;
+            }
+        }
+        return wordCount;
     }
 
     public static int getSentenceCount(String input) {
-        return input.trim().split("[.!?]+").length;// skaidom elementus pagal sakinius kad juos atpazintu pagal juos elementus
+        return input.trim().split("[.!?;]+").length;
     }
 
     public static int getNumberCount(String input) {

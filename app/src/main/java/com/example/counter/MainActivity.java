@@ -42,25 +42,23 @@ public class MainActivity extends AppCompatActivity {
         TextView txtResult = findViewById(R.id.txtResult);
         EditText etInputText = findViewById(R.id.etInputText);
         String userInput = etInputText.getText().toString();
+        int position = spnCountType.getSelectedItemPosition();
+        int result;
 
         if (userInput.trim().isEmpty()) {
             Toast.makeText(this, R.string.empty_input_message, Toast.LENGTH_SHORT).show();
-            return;
         }
-
-        int position = spnCountType.getSelectedItemPosition();
-        int result;
-        if (position == 0) { //pasirenkama pozicija pagal kuria vyks skaiciavimai
-            result = Counter.getWordCount(userInput);
-        } else if (position == 1) {
-            result = Counter.getCharCount(userInput);
-        } else if (position == 2){
-            result = Counter.getSentenceCount(userInput);
+        else {
+            if (position == 0) {
+                result = Counter.getWordCount(userInput);
+            } else if (position == 1) {
+                result = Counter.getCharCount(userInput);
+            } else if (position == 2) {
+                result = Counter.getSentenceCount(userInput);
+            } else {
+                result = Counter.getNumberCount(userInput);
+            }
+            txtResult.setText(String.valueOf(result));
         }
-        else{
-            result=Counter.getNumberCount(userInput);
         }
-
-        txtResult.setText(String.valueOf(result));
-    }
 }
