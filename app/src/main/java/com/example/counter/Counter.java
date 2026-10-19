@@ -9,7 +9,7 @@ public class Counter {
     public static int getWordCount(String input) {
         int wordCount = 0;
         for (String word : input.trim().split("\\s+")) {
-            if (!word.isEmpty() && !Character.isDigit(word.charAt(0))) {
+            if (word.matches(".*[a-zA-Z]+.*")) {
                 wordCount++;
             }
         }
