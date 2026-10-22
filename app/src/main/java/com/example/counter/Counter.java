@@ -3,30 +3,47 @@ package com.example.counter;
 public class Counter {
 
     public static int getCharCount(String input) {
-        return input.length();
+        if(input == null){
+            return -1;
+        }
+        else{
+            return input.length();
+        }
     }
 
     public static int getWordCount(String input) {
-        int wordCount = 0;
-        for (String word : input.trim().split("\\s+")) {
-            if (word.matches(".*[a-zA-Z]+.*")) {
-                wordCount++;
+        if (input == null) {
+            return -1;
+        } else {
+            int wordCount = 0;
+            String[] words = input.trim().split("\\s+");
+            for (String word : words) {
+                if (word.matches(".*[a-zA-Z]+.*")) {
+                    wordCount++;
+                }
             }
+            return wordCount;
         }
-        return wordCount;
     }
 
     public static int getSentenceCount(String input) {
-        return input.trim().split("[.!?;]+").length;
-    }
-
-    public static int getNumberCount(String input) {
-        int count = 0;
-        for (char c : input.toCharArray()) {
-            if (Character.isDigit(c)) {
-                count++;
-            }
+        if (input == null) {
+            return -1;
+        } else {
+            return input.trim().split("[.!?;]+").length;
         }
-        return count;
+    }
+    public static int getNumberCount(String input) {
+        if (input == null) {
+            return -1;
+        } else {
+            int count = 0;
+            for (char c : input.toCharArray()) {
+                if (Character.isDigit(c)) {
+                    count++;
+                }
+            }
+            return count;
+        }
     }
 }

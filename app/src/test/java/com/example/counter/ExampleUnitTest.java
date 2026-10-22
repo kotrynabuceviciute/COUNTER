@@ -29,13 +29,16 @@ public class ExampleUnitTest {
     }
     @Test
     public void getCharCount_test3_emptyText(){
+
         assertEquals(0,Counter.getCharCount(""));
     }
 
     @Test
     public void getCharCount_test4_spaces(){
+
         assertEquals(3,Counter.getCharCount("   "));
     }
+
     @Test
     public void getCharCount_test5_exclamationMark(){
         assertEquals(3,Counter.getCharCount("!!!"));
@@ -46,7 +49,13 @@ public class ExampleUnitTest {
     }
     @Test
     public void getCharCount_test7_singleChar(){
+
         assertEquals(1,Counter.getCharCount("a"));
+    }
+    @Test
+    public void getCharCount_tes8_Null(){
+
+        assertEquals(-1,Counter.getCharCount(null));
     }
 
 // word count
@@ -57,6 +66,7 @@ public class ExampleUnitTest {
     }
     @Test
     public void getWordCount_test2_emptyText(){
+
         assertEquals(0,Counter.getWordCount(""));
     }
     @Test
@@ -73,6 +83,7 @@ public class ExampleUnitTest {
     }
     @Test
     public void getWordCount_test6_singleWord(){
+
         assertEquals(1,Counter.getWordCount("debesis"));
     }
     @Test
